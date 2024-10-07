@@ -38,7 +38,7 @@ def generate_summary(df):
 st.set_page_config(page_title="Data Insights Expert")
 st.header("Supreme Data Insights")
 
-uploaded_file = st.file_uploader("Upload your Excel dataset (XLSX)...", type=["xlsx"])
+uploaded_file = st.file_uploader("Upload your Excel dataset (XLSX)...", type=["csv"])
 
 if uploaded_file is not None:
     st.success("Excel file uploaded successfully!")
