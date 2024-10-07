@@ -26,13 +26,7 @@ def process_excel(uploaded_file):
         st.error(f"Error processing Excel file: {e}")
         return None
 
-def generate_summary(df):
-    try:
-        summary = df.describe(include='all').to_dict()
-        return summary
-    except Exception as e:
-        st.error(f"Error generating summary: {e}")
-        return None
+
 
 # Streamlit UI
 st.set_page_config(page_title="Data Insights Expert")
@@ -48,11 +42,6 @@ if uploaded_file is not None:
         st.subheader("Dataset Preview")
         st.dataframe(df.head())  # Show first few rows of the dataset
         
-        # Generate a summary of the dataset
-        summary = generate_summary(df)
-        if summary:
-            st.subheader("Dataset Summary")
-            st.json(summary)
         
         # Define prompts for insights
         input_prompt1 = """
