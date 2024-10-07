@@ -20,7 +20,7 @@ def get_gemini_response(prompt):
 def process_excel(uploaded_file):
     try:
         # Read the Excel file into a pandas DataFrame
-        df = pd.read_excel(uploaded_file)
+        df = pd.read_csv(uploaded_file)
         return df
     except Exception as e:
         st.error(f"Error processing Excel file: {e}")
