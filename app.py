@@ -42,7 +42,8 @@ if uploaded_file is not None:
         st.subheader("Dataset Preview")
         st.dataframe(df.head())  # Show first few rows of the dataset
         
-        
+        # Generate a dataset summary (basic description)
+        summary = df.describe(include='all').to_string()
         # Define prompts for insights
         input_prompt1 = """
         You are a data analyst. Please provide a detailed analysis of the following dataset. 
